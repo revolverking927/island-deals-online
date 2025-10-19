@@ -199,6 +199,12 @@ CREATE TABLE discounts (
 Since PostgreSQL doesn’t run on Vercel, you can use **JSON placeholders**:
 
 ```javascript
+// Mock database
+let users = [
+    { id: 1, email: "john@company.com", password: "123456", role: "manufacturer", company_name: "John's Co." },
+    { id: 2, email: "sarah@consumer.com", password: "abcdef", role: "consumer", name: "Sarah L.", parish: "Kingston" }
+];
+
 const mockDiscounts = [
   {
     discount_id: 1,
@@ -247,3 +253,4 @@ MIT License © 2025 Island Deals Online
 I can also **write a `VERCEL.md` guide** showing **exact steps to deploy this project with mock data and no database** so the whole site works live.
 
 Do you want me to do that next?
+

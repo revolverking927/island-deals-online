@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login / Register</title>
+  <link rel="stylesheet" href="styles/login_register.css">
+</head>
+<body>
+    <nav class="nav-bar">
+        <div class="logo-wrapper">
+            <h3 class="subtext">Island Deals Online</h2>
+        </div>
+        <ul class="horizontal nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="./login_register.html">Sign In</a></li>
+        </ul>
+    </nav>
+  <div class="container">
+    <div class="tabs">
+      <button id="loginTab" class="active">Login</button>
+      <button id="registerTab">Register</button>
+    </div>
+
+    <!-- LOGIN FORM -->
+    <form id="loginForm" class="form active">
+      <label>Email</label>
+      <input type="email" id="login-email" name="email" placeholder="Enter email" required>
+
+      <label>Password</label>
+      <input type="password" id="login-password" name="password" placeholder="Enter password" required>
+
+      <label>Role</label>
+      <select id="login-role" required>
+        <option value="" disabled selected>-- Select role --</option>
+        <option value="consumer">Consumer</option>
+        <option value="manufacturer">Manufacturer</option>
+      </select>
+
+      <button type="button" class="submit" id="login-submit">Login</button>
+    </form>
+
+    <!-- REGISTER FORM -->
+    <form id="registerForm" class="form">
+      <label>Name</label>
+      <input type="text" id="register-name" name="name" placeholder="Enter full name" required>
+
+      <label>Email</label>
+      <input type="email" id="register-email" name="email" placeholder="Enter email" required>
+
+      <label>Password</label>
+      <input type="password" id="register-password" name="password" placeholder="Choose password" required>
+
+      <label>Parish (consumers only)</label>
+      <select title="parish" id="register-parish" name="parish">
+        <option value="">All Parishes</option>
+            <option value="Kingston">Kingston</option>
+            <option value="St. Andrew">St. Andrew</option>
+            <option value="St. Catherine">St. Catherine</option>
+            <option value="Clarendon">Clarendon</option>
+            <option value="Manchester">Manchester</option>
+            <option value="St. Elizabeth">St. Elizabeth</option>
+            <option value="St. James">St. James</option>
+            <option value="Hanover">Hanover</option>
+            <option value="Westmoreland">Westmoreland</option>
+            <option value="St. Ann">St. Ann</option>
+            <option value="St. Mary">St. Mary</option>
+            <option value="Portland">Portland</option>
+            <option value="Trelawny">Trelawny</option>
+            <option value="St. Thomas">St. Thomas</option>
+      </select>
+
+      <label>Role</label>
+      <select name="role" id="register-role" required>
+        <option value="" disabled selected>-- Select role --</option>
+        <option value="consumer">Consumer</option>
+        <option value="manufacturer">Manufacturer</option>
+      </select>
+
+      <div class="manufacturer-fields" style="display: none;">
+        <label>Company</label>
+        <input type="text" id="register-company" name="company" placeholder="Enter company name">
+      </div>
+
+      <button type="button" class="submit" id="register-submit">Register</button>
+    </form>
+  </div>
+
+  <script src="js/login_register.js"></script>
+</body>
+</html>

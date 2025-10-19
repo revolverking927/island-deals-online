@@ -1,0 +1,144 @@
+:root {
+    --primary-green: #38a562;
+    --secondary-green: #2e7d32;
+    --light-yellow: #fff3c9;
+    --off-white: #f5f5ee;
+    --dark-text: #2c2c2c;
+    --light-text: #ffffff;
+    --quote-color: #66bb6a;
+}
+
+/* === Global Styles === */
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--off-white);
+    color: var(--dark-text);
+    margin: 0;
+    padding: 0;
+}
+
+/* === Navigation Bar === */
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background-color: var(--primary-green);
+}
+
+.logo-wrapper h3 {
+    color: var(--light-text);
+    font-size: 1.8em;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links li a {
+    color: var(--light-text);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.nav-links li a:hover {
+    color: var(--light-yellow);
+}
+
+/* === Container === */
+.container {
+    max-width: 450px;
+    background-color: var(--light-text);
+    margin: 50px auto;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* === Tabs === */
+.tabs {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.tabs button {
+    flex: 1;
+    padding: 12px 0;
+    font-weight: bold;
+    background-color: var(--light-yellow);
+    border: 1px solid var(--primary-green);
+    cursor: pointer;
+    border-radius: 8px 8px 0 0;
+    transition: 0.3s;
+}
+
+.tabs button.active {
+    background-color: var(--primary-green);
+    color: var(--light-text);
+    border-bottom: 2px solid var(--primary-green);
+}
+
+.tabs button:hover:not(.active) {
+    background-color: var(--off-white);
+}
+
+/* === Forms === */
+.form {
+    display: none;
+    flex-direction: column;
+}
+
+.form.active {
+    display: flex;
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input, select, button.submit {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid var(--primary-green);
+    font-size: 1em;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: var(--secondary-green);
+}
+
+button.submit {
+    background-color: var(--primary-green);
+    color: var(--light-text);
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button.submit:hover {
+    background-color: var(--secondary-green);
+}
+
+/* === Manufacturer Fields === */
+.manufacturer-fields {
+    display: none;
+}
+
+/* === Responsive === */
+@media (max-width: 500px) {
+    .container {
+        margin: 20px;
+        padding: 20px;
+    }
+
+    .tabs button {
+        font-size: 0.9em;
+    }
+}

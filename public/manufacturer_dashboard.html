@@ -2,9 +2,92 @@
 <html>
 <head>
     <title>Manufacturer Dashboard</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="styles/manufacturer_dashboard.css">
+    <script src="https://s3.amazonaws.com/builds.handlebarsjs.com/handlebars-v4.7.8.js"></script>
+
 </head>
 <body>
-    <h1>Welcome, Manufacturer!</h1>
-    <p>This is your dashboard. You can later add options to create discounts, manage products, etc.</p>
+    <nav class="nav-bar">
+        <div class="logo-wrapper">
+            <h3 class="subtext">Island Deals Online</h2>
+        </div>
+        <ul class="horizontal nav-links">
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./login_register.html">Sign In</a></li>
+        </ul>
+    </nav>
+    <section class="header">
+        <h1 class="headline">Manufacturer Dashboard</h1>
+    </section>
+    <section class="goods-posts">
+        <div class="column-1">
+            <div class="map-wrapper">
+                <h2>Map of Jamaica — Region Highlight</h2>
+                <div id="map"></div>
+            </div>
+            <button class="btn-3 post-btn">Post product</button>
+        </div>
+        <div class="column-2">
+            <h3 class="subtext">List showing active deals</h3>
+            <ul class="product-list">
+                <li class="product-li">
+                </li>
+            </ul>
+        </div>
+    </section>
+    <div class="search-container">
+        <input type="text" id="searchBar" placeholder="Search products by title..."/>
+    </div>
+
+    <ul id="discountList" class="product-list"></ul>
+    <section class="goods-analytics">
+
+    </section>
+    <div class="container" style="display: none">
+        <h2>Add New Discount</h2>
+        <form id="discountForm">
+            <label>Parish</label>
+            <select name="parish" required>
+                <option value="">All Parishes</option>
+            <option value="Kingston">Kingston</option>
+            <option value="St. Andrew">St. Andrew</option>
+            <option value="St. Catherine">St. Catherine</option>
+            <option value="Clarendon">Clarendon</option>
+            <option value="Manchester">Manchester</option>
+            <option value="St. Elizabeth">St. Elizabeth</option>
+            <option value="St. James">St. James</option>
+            <option value="Hanover">Hanover</option>
+            <option value="Westmoreland">Westmoreland</option>
+            <option value="St. Ann">St. Ann</option>
+            <option value="St. Mary">St. Mary</option>
+            <option value="Portland">Portland</option>
+            <option value="Trelawny">Trelawny</option>
+            <option value="St. Thomas">St. Thomas</option>
+            </select>
+
+            <label>Title</label>
+            <input type="text" name="title" placeholder="Enter title" required>
+
+            <input type="text" name="product" placeholder="Enter product name" required>
+
+            <input type="text" name="original_price" placeholder="Original price" required>
+            <input type="text" name="discounted_price" placeholder="Discounted price" required>
+            
+            <label>Reason</label>
+            <input type="text" name="reason" placeholder="Enter reason for discount" required>
+
+            <label>Valid Until</label>
+            <input type="date" name="valid_until" required>
+
+            <button type="submit">Add Discount</button>
+        </form>
+
+        <div id="message"></div>
+    </div>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script type="module" src="js/map.js"></script>
+    <script type="module" src="js/manufacturer_dashboard.js"></script>
+
 </body>
 </html>

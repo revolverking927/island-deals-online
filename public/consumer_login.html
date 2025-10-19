@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Consumer Login</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <div class="login-container">
+    <h1>Consumer Login</h1>
+    <form action="/login/consumer" method="POST">
+      <label>Email</label>
+      <input type="email" name="email" required>
+
+      <label>Password</label>
+      <input type="password" name="password" required>
+
+      <label>Select your Parish</label>
+      <select name="parish" required>
+        <option value="Kingston">Kingston</option>
+        <option value="St. Andrew">St. Andrew</option>
+        <option value="St. Catherine">St. Catherine</option>
+        <option value="Clarendon">Clarendon</option>
+        <option value="St. James">St. James</option>
+        <!-- Add rest later -->
+      </select>
+
+      <button type="submit">Login</button>
+    </form>
+  </div>
+</body>
+</html>

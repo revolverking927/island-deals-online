@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login / Register</title>
+    <link rel="stylesheet" href="styles/login_register.css">
+    
+</head>
+<body>
+    <div class="container">
+
+        <div class="tabs">
+            <button id="loginTab" class="active">Login</button>
+            <button id="registerTab">Register</button>
+        </div>
+
+        <!-- LOGIN FORM -->
+         <select name="role" required>
+    <option value="" disabled selected>Select role</option>
+    <option value="consumer">Consumer</option>
+    <option value="manufacturer">Manufacturer</option>
+</select>
+
+        <form id="loginForm" class="form active">
+            <label>Email</label>
+            <input type="email" name="email" placeholder="Enter email" required>
+
+            <label>Password</label>
+            <input type="password" name="password" placeholder="Enter password" required>
+
+            <button type="submit" class="submit">Login</button>
+        </form>
+
+        <!-- REGISTER FORM -->
+        <form id="registerForm" class="form">
+            <label>Name</label>
+            <input type="text" name="name" placeholder="Enter full name" required>
+
+            <label>Email</label>
+            <input type="email" name="email" placeholder="Enter email" required>
+
+            <label>Password</label>
+            <input type="password" name="password" placeholder="Choose password" required>
+
+            <label>Role</label>
+            <select name="role" id="roleSelect" required>
+                <option value="" disabled selected>Select role</option>
+                <option value="consumer">Consumer</option>
+                <option value="manufacturer">Manufacturer</option>
+            </select>
+
+            <div id="parishField" style="display:none;">
+                <label>Parish (consumers only)</label>
+                <select name="parish">
+                    <option value="Kingston">Kingston</option>
+                    <option value="St. Andrew">St. Andrew</option>
+                    <option value="St. Catherine">St. Catherine</option>
+                    <!-- Add others here -->
+                </select>
+            </div>
+
+            <button type="submit" class="submit">Register</button>
+        </form>
+    </div>
+
+<script>
+    // SWITCH TABS
+    const loginTab = document.getElementById("loginTab");
+    const registerTab = document.getElementById("registerTab");
+    const loginForm = document.getElementById("loginForm");
+    const registerForm = document.getElementById("registerForm");
+
+    loginTab.onclick = () => {
+        loginTab.classList.add("active");
+        registerTab.classList.remove("active");
+        loginForm.classList.add("active");
+        registerForm.classList.remove("active");
+    }
+
+    registerTab.onclick = () => {
+        registerTab.classList.add("active");
+        loginTab.classList.remove("active");
+        registerForm.classList.add("active");
+        loginForm.classList.remove("active");
+    }
+
+    // SHOW PARISH ONLY IF CONSUMER SELECTED
+    const roleSelect = document.getElementById("roleSelect");
+    const parishField = document.getElementById("parishField");
+
+    roleSelect.addEventListener("change", () => {
+        parishField.style.display = (roleSelect.value === "consumer") ? "block" : "none";
+    });
+
+    // (Will connect to backend soon)
+</script>
+</body>
+</html>

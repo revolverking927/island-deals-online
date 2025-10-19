@@ -1,0 +1,54 @@
+/* Simple built-in layout (optional) */
+.container {
+    width: 400px;
+    margin: 60px auto;
+    padding: 25px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.tabs {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.tabs button {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    background: #f0f0f0;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.tabs button.active {
+    background: #0275d8;
+    color: #fff;
+}
+
+.form {
+    display: none;
+}
+
+.form.active {
+    display: block;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin-right: 10px;
+    margin-bottom: 15px;
+}
+
+button.submit {
+    background: #0275d8;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 6px;
+}
